@@ -1,0 +1,63 @@
+drawTikZtex
+==========
+
+A simple routine to get a standalone pdf from TikZ code.
+
+Where I got the base from:
+http://texblog.org/tag/pgftikz/#preview
+The rest is selfexplanatory:
+
+- How to use (with example)
+- What the input has to look like
+- How to install
+- No copyright
+
+
+
+How to use (after installed, see bottom):
+$ drawtikztex path/to/input.tex path2/too/output.pdf
+
+Example
+$ drawtikztex drawing.tex drawing.pdf
+
+input.tex contains only \begin{tikzpicture}...\end{tikzpicture}
+Example content of a input.tex:
+####################################################################
+\begin{tikzpicture}[>=latex]
+    \begin{scope}[xshift=0cm]
+    \draw (2,0.1) rectangle (5,-0.15);
+    \filldraw[fill=gray!20] (3.5,-0.15) rectangle (4.5,-0.25);
+    \draw[->,very thick,double] (4,-1.5) -- (4,-0.75);
+    \draw[thin,dashed] (4,-0.75) -- (4,0.5);
+    \draw[<-,thick] (3.8,-0.3) -- (5.3,-1.5);
+    \draw[->,thick] (3.7,-0.3) -- (2.2,-1.5);
+    \end{scope}
+\end{tikzpicture}
+####################################################################
+
+The program should be self explanatory: Look into drawtikz.sh.
+Any further explanation is redundant.
+Except:
+You can modify the file drawtikz.tex to customize the output.
+(For example if your TikZ drawing requires additional packages,
+or you want a different border...)
+
+
+How to install drawtikztex:
+1) download the files contained in this folder
+2) make the drawtikztex.sh into an executable:
+    $ chmod +x drawtikztex.sh
+3) put them in a folder of your choosing
+    (except: it must be a folder with permission to make new folders)
+    example: ~/.drawtikztex/
+4) write this path in the file drawtikztex.sh:
+    base=~/.drawtikztex
+    (resp. now your chosen directory)
+5) install by creating a symlink that is accessible from everywhere
+    sudo ln -s ~/.drawtikztex/drawtikztex.sh /usr/local/bin/drawtikztex
+
+
+
+As a last note:
+This project has no copyright attached what so ever.
+Do with it whatever you want!
