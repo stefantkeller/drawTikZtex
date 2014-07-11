@@ -5,7 +5,8 @@ A simple routine to get a standalone pdf from TikZ code.
 
 Where I got the base from:
 http://texblog.org/tag/pgftikz/#preview
-The rest is selfexplanatory:
+http://stackoverflow.com/questions/2701902/standalone-diagrams-with-tikz
+The rest is self-explanatory:
 
 - How to use (with example)
 - What the input has to look like
@@ -19,6 +20,11 @@ $ drawtikztex path/to/input.tex path2/too/output.pdf
 
 Example
 $ drawtikztex drawing.tex drawing.pdf
+
+Once you have it as pdf use instructions from
+http://stackoverflow.com/questions/2701902/standalone-diagrams-with-tikz
+$ pdftops -eps drawing.pdf
+$ convert -density 300 drawing.eps drawing.png
 
 input.tex contains only \begin{tikzpicture}...\end{tikzpicture}
 Example content of a input.tex:
