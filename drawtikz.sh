@@ -31,3 +31,13 @@ echo ''
 echo ''
 echo 'TikZ picture successfully drawn:'
 echo $output
+
+#
+if [ "$3" == 'png' ]
+then
+  pnt=`expr index "$output" .`
+  p=$(bc -l <<< $pnt-1)
+  outputbase=${output:0:p}
+  pdftops -eps $output
+  convert -density 300 $outputbase.eps $outputbase.png
+fi

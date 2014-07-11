@@ -16,10 +16,13 @@ The rest is self-explanatory:
 
 
 How to use (after installed, see bottom):
-$ drawtikztex path/to/input.tex path2/too/output.pdf
+$ drawtikztex path/to/input.tex path2/too/output.pdf [png]
 
 Example
 $ drawtikztex drawing.tex drawing.pdf
+converts the TikZ picture in drawing.tex into a pdf
+$ drawtikztex drawing.tex drawing.pdf png
+does the same as above, but additionally creates a png out of the pdf with default settings.
 
 Once you have it as pdf use instructions from
 http://stackoverflow.com/questions/2701902/standalone-diagrams-with-tikz
