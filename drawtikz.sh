@@ -40,4 +40,5 @@ then
   outputbase=${output:0:p}
   pdftops -eps $output
   convert -density 300 $outputbase.eps $outputbase.png
+  rm $outputbase.eps
 fi
